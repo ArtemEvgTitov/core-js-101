@@ -18,7 +18,7 @@
  *   '',  'bb'  => 'bb'
  */
 function concatenateStrings(value1, value2) {
-    return value1 + value2;
+  return value1 + value2;
 }
 
 /**
@@ -33,7 +33,7 @@ function concatenateStrings(value1, value2) {
  *   ''      => 0
  */
 function getStringLength(value) {
-    return value.length;
+  return value.length;
 }
 
 /**
@@ -50,7 +50,7 @@ function getStringLength(value) {
  *   'Chuck','Norris'  => 'Hello, Chuck Norris!'
  */
 function getStringFromTemplate(firstName, lastName) {
-    return `Hello, ${firstName} ${lastName}!`;
+  return `Hello, ${firstName} ${lastName}!`;
 }
 
 /**
@@ -64,7 +64,7 @@ function getStringFromTemplate(firstName, lastName) {
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
 function extractNameFromTemplate(value) {
-    return value.replace('Hello, ', '').replace('!', '');
+  return value.replace('Hello, ', '').replace('!', '');
 }
 
 /**
@@ -78,7 +78,7 @@ function extractNameFromTemplate(value) {
  *   'cat'       => 'c'
  */
 function getFirstChar(value) {
-    return value.charAt(0);
+  return value.charAt(0);
 }
 
 /**
@@ -93,7 +93,7 @@ function getFirstChar(value) {
  *   '\tHello, World! ' => 'Hello, World!'
  */
 function removeLeadingAndTrailingWhitespaces(value) {
-    return value.trim();
+  return value.trim();
 }
 
 /**
@@ -108,7 +108,7 @@ function removeLeadingAndTrailingWhitespaces(value) {
  *   'cat', 3 => 'catcatcat'
  */
 function repeatString(value, count) {
-    return value.repeat(count);
+  return value.repeat(count);
 }
 
 /**
@@ -124,7 +124,7 @@ function repeatString(value, count) {
  *   'ABABAB','BA' => 'ABAB'
  */
 function removeFirstOccurrences(str, value) {
-    str.replace(value, '');
+  str.replace(value, '');
 }
 
 /**
@@ -139,7 +139,7 @@ function removeFirstOccurrences(str, value) {
  *   '<a>' => 'a'
  */
 function unbracketTag(str) {
-    return str.slice(1, -1);
+  return str.slice(1, -1);
 }
 
 /**
@@ -153,7 +153,7 @@ function unbracketTag(str) {
  *  'abcdefghijklmnopqrstuvwxyz' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
  */
 function convertToUpperCase(str) {
-    return str.toUpperCase();
+  return str.toUpperCase();
 }
 
 /**
@@ -172,7 +172,7 @@ function convertToUpperCase(str) {
  *   'info@gmail.com' => ['info@gmail.com']
  */
 function extractEmails(str) {
-    return str.split(';');
+  return str.split(';');
 }
 
 /**
@@ -198,8 +198,8 @@ function extractEmails(str) {
  *             '└──────────┘\n'
  *
  */
-function getRectangleString( /* width, height */ ) {
-    // throw new Error('Not implemented');
+function getRectangleString(/* width, height */) {
+  // throw new Error('Not implemented');
 }
 
 /**
@@ -219,19 +219,19 @@ function getRectangleString( /* width, height */ ) {
  *
  */
 function encodeToRot13(str) {
-    const a = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('');
-    const r = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'.split('');
-    const strArray = str.split('');
-    let result = '';
-    for (let i = 0; i < strArray.length; i += 1) {
-        const index = a.indexOf(strArray[i]);
-        if (index >= 0) {
-            result += r[index];
-        } else {
-            result += strArray[i];
-        }
+  const a = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('');
+  const r = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'.split('');
+  const strArray = str.split('');
+  let result = '';
+  for (let i = 0; i < strArray.length; i += 1) {
+    const index = a.indexOf(strArray[i]);
+    if (index >= 0) {
+      result += r[index];
+    } else {
+      result += strArray[i];
     }
-    return result;
+  }
+  return result;
 }
 
 /**
@@ -248,7 +248,7 @@ function encodeToRot13(str) {
  *   isString(new String('test')) => true
  */
 function isString(value) {
-    return typeof value === 'string' || value instanceof String;
+  return typeof value === 'string' || value instanceof String;
 }
 
 /**
@@ -276,78 +276,78 @@ function isString(value) {
  *   'K♠' => 51
  */
 function getCardId(value) {
-    const cards = [
-        'A♣',
-        '2♣',
-        '3♣',
-        '4♣',
-        '5♣',
-        '6♣',
-        '7♣',
-        '8♣',
-        '9♣',
-        '10♣',
-        'J♣',
-        'Q♣',
-        'K♣',
-        'A♦',
-        '2♦',
-        '3♦',
-        '4♦',
-        '5♦',
-        '6♦',
-        '7♦',
-        '8♦',
-        '9♦',
-        '10♦',
-        'J♦',
-        'Q♦',
-        'K♦',
-        'A♥',
-        '2♥',
-        '3♥',
-        '4♥',
-        '5♥',
-        '6♥',
-        '7♥',
-        '8♥',
-        '9♥',
-        '10♥',
-        'J♥',
-        'Q♥',
-        'K♥',
-        'A♠',
-        '2♠',
-        '3♠',
-        '4♠',
-        '5♠',
-        '6♠',
-        '7♠',
-        '8♠',
-        '9♠',
-        '10♠',
-        'J♠',
-        'Q♠',
-        'K♠',
-    ];
-    return cards.indexOf(value);
+  const cards = [
+    'A♣',
+    '2♣',
+    '3♣',
+    '4♣',
+    '5♣',
+    '6♣',
+    '7♣',
+    '8♣',
+    '9♣',
+    '10♣',
+    'J♣',
+    'Q♣',
+    'K♣',
+    'A♦',
+    '2♦',
+    '3♦',
+    '4♦',
+    '5♦',
+    '6♦',
+    '7♦',
+    '8♦',
+    '9♦',
+    '10♦',
+    'J♦',
+    'Q♦',
+    'K♦',
+    'A♥',
+    '2♥',
+    '3♥',
+    '4♥',
+    '5♥',
+    '6♥',
+    '7♥',
+    '8♥',
+    '9♥',
+    '10♥',
+    'J♥',
+    'Q♥',
+    'K♥',
+    'A♠',
+    '2♠',
+    '3♠',
+    '4♠',
+    '5♠',
+    '6♠',
+    '7♠',
+    '8♠',
+    '9♠',
+    '10♠',
+    'J♠',
+    'Q♠',
+    'K♠',
+  ];
+  return cards.indexOf(value);
 }
 
 
 module.exports = {
-    concatenateStrings,
-    getStringLength,
-    getStringFromTemplate,
-    extractNameFromTemplate,
-    getFirstChar,
-    removeLeadingAndTrailingWhitespaces,
-    repeatString,
-    removeFirstOccurrences,
-    unbracketTag,
-    convertToUpperCase,
-    extractEmails,
-    getRectangleString,
-    encodeToRot13,
-    isString,
-    getCardId,
+  concatenateStrings,
+  getStringLength,
+  getStringFromTemplate,
+  extractNameFromTemplate,
+  getFirstChar,
+  removeLeadingAndTrailingWhitespaces,
+  repeatString,
+  removeFirstOccurrences,
+  unbracketTag,
+  convertToUpperCase,
+  extractEmails,
+  getRectangleString,
+  encodeToRot13,
+  isString,
+  getCardId,
 };
